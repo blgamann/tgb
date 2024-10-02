@@ -153,12 +153,12 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mr-4">
             <LanguageSelector />
             <div className="md:hidden ml-4 flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-400 hover:text-white focus:outline-none"
+                className="text-white hover:text-gray-200 focus:outline-none"
                 aria-label="Open Menu"
               >
                 {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
