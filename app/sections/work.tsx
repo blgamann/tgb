@@ -72,7 +72,7 @@ const WORK_CARDS_DATA: Omit<WorkCardProps, "onClick">[] = [
     image: "/08-aia.png",
     title: "Work8",
     task: "UX/UI Design",
-    imageWidth: 80,
+    imageWidth: 60,
     pdfUrl: "/pdfs/work8.pdf",
   },
   {

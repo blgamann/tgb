@@ -17,7 +17,7 @@ const Service: React.FC<{ language: "KO" | "EN" }> = ({ language }) => {
     items: string[];
   }) => {
     return (
-      <div className="w-full lg:w-[310px] overflow-y-auto py-6 lg:py-0">
+      <div className="w-full lg:w-[300px] overflow-y-auto py-6 lg:py-0">
         <div className="border-l-2 border-[#00ff02] pl-4 pb-6 h-auto lg:h-[250px]">
           <h2 className="text-[#00ff02] font-bold text-[38px] mb-3">
             {service}
@@ -46,9 +46,9 @@ const Service: React.FC<{ language: "KO" | "EN" }> = ({ language }) => {
   };
 
   return (
-    <section id="service">
-      <div className="min-h-screen flex flex-col items-center justify-center text-3xl bg-black py-8 lg:gap-32">
-        <div className="text-[48px] font-normal text-[#00ff02] pt-20 lg:pt-0">
+    <section id="service" className="bg-black">
+      <div className="min-h-screen flex flex-col items-center justify-center text-3xl py-8 lg:gap-32">
+        <div className="text-[48px] font-normal text-[#00ff02]">
           Our Service
         </div>
         <div className="flex flex-col lg:flex-row justify-center items-start w-full max-w-6xl mx-auto px-4">
