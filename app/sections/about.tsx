@@ -4,7 +4,7 @@ const About: React.FC<{ language: "KO" | "EN" }> = ({ language }) => {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center text-4xl bg-red-500 px-4 sm:px-8 md:px-20"
+      className="min-h-screen flex flex-col justify-center text-4xl bg-black px-4 sm:px-8 md:px-20"
     >
       <div className="flex flex-col justify-center h-full">
         <div className="mx-auto sm:mx-0">
