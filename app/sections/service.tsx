@@ -49,7 +49,7 @@ const Service: React.FC<{ language: "KO" | "EN" }> = ({ language }) => {
     <section id="service">
       <div className="min-h-screen flex flex-col items-center justify-center text-3xl bg-black py-8 lg:gap-32">
         <div className="text-[48px] font-normal text-[#00ff02] pt-20 lg:pt-0">
-          Our Services
+          Our Service
         </div>
         <div className="flex flex-col lg:flex-row justify-center items-start w-full max-w-6xl mx-auto px-4">
           {[

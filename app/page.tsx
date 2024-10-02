@@ -10,6 +10,7 @@ import About from "@/sections/about";
 import Service from "@/sections/service";
 import Work from "@/sections/work";
 import Contact from "@/sections/contact";
+import Boss from "@/sections/boss";
 
 import Logo from "@/components/logo";
 
@@ -174,6 +175,7 @@ const Home: NextPage = () => {
         <About language={language} />
         <Service language={language} />
         <Work language={language} />
+        <Boss language={language} />
         <Contact language={language} />
       </main>
     </div>
