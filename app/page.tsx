@@ -5,12 +5,13 @@ import { useState, useEffect, useRef, FC } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 
 import About from "@/sections/about";
 import Service from "@/sections/service";
 import Work from "@/sections/work";
 import Contact from "@/sections/contact";
+
+import Logo from "@/components/logo";
 
 interface MenuItem {
   href: string;
@@ -69,13 +70,6 @@ const Home: NextPage = () => {
     element?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
-
-  // 로고 컴포넌트: 일관된 크기로 렌더링
-  const Logo: FC = () => (
-    <div className="flex-shrink-0">
-      <Image src="/logo.svg" alt="Logo" width={160} height={60} />
-    </div>
-  );
 
   // 언어 선택기 컴포넌트
   const LanguageSelector: FC = () => (
