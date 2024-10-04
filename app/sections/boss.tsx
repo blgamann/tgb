@@ -5,7 +5,7 @@ const Boss: React.FC<{ language: "KO" | "EN" }> = ({ language }) => {
   return (
     <section
       id="boss"
-      className="flex flex-col justify-center items-center py-12 bg-black"
+      className="flex flex-col justify-center items-center py-12 bg-red min-h-screen"
     >
       <div className="flex flex-col items-center justify-center space-y-6 lg:space-y-24 w-full px-4 lg:px-44">
         <div className="text-3xl lg:text-4xl font-normal text-[#00ff02] text-center">
