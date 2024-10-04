@@ -92,6 +92,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
     additionalInfo: "",
     file: null,
   });
+  const [agreed, setAgreed] = useState(false);
 
   const [errors, setErrors] = useState<FormErrors>({});
 
@@ -253,17 +254,10 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
           <div className="h-[100px]"></div>
 
-          <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
-            Step 02.
-          </div>
-          <div className="flex items-center">
-            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
-              의뢰하고 싶으신 분야를 선택해주세요.
-            </div>
-            <div className="ml-3 text-white font-pretendard text-[20px] font-bold leading-[160%]">
-              (중복 선택 가능)
-            </div>
-          </div>
+          <p className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+            의뢰하고 싶으신 분야를 선택해주세요.{" "}
+            <span className="ml-1 text-[20px]">(중복 선택 가능)</span>
+          </p>
 
           <div className="h-[35px]"></div>
 
@@ -291,6 +285,69 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             onChange={handleChange}
           />
           <FileUpload label={labels.file} onChange={handleFileChange} />
+
+          <div className="h-[100px]"></div>
+
+          <p className="max-w-[500px] text-white font-pretendard text-xs font-medium whitespace-pre-line border-b-[1px] border-white pb-[60px]">
+            {`개인정보 수집 및 이용 동의
+
+유한회사 티슈는  『개인정보보호법』 제 15조 및 22조 등 관련 법령을 준수하며, 이용자 권익 보호에 최선을 다하고 있습니다. 
+
+1. 개인정보의 수집·이용 목적
+의뢰인님의 프로젝트에 대한 문의에 대한 정보가 보다 정확한 답변을 위해 수집됩니다.
+
+2. 수집·이용하는 개인정보 항목
+필수 항목 : 성명, 회사/기업, 이메일, 휴대전화, 직함, 의뢰 내용
+선택항목 : 첨부파일, 링크
+
+3. 개인정보의 보유 및 이용기간
+원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.
+보존 이유 : 의뢰인님의 동의를 통한 인재 정보 유지
+보존 기간 : 정보 삭제 요청 시까지
+
+4. 개인정보 수집·이용 동의 거부에 대한 안내
+위 개인정보 중 필수적 정보의 수집·이용에 관한 동의는 의뢰를 위하여 필수적이므로, 위 사항에 동의하셔야만 의뢰가 가능합니다.
+            `}
+          </p>
+
+          <div className="h-[20px]"></div>
+
+          <div className="flex items-center mb-8">
+            <div
+              className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer mr-2"
+              onClick={() => setAgreed(!agreed)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                fill="#ffffff"
+              >
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  fill="none"
+                  stroke={agreed ? "#00FF02" : "#ffffff"}
+                  strokeWidth="5"
+                />
+                <path
+                  d="M30 50 L45 65 L70 40"
+                  fill="none"
+                  stroke={agreed ? "#00FF02" : "#ffffff"}
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <label
+              className="text-white text-[20px] font-pretendard font-medium leading-[110%] cursor-pointer"
+              onClick={() => setAgreed(!agreed)}
+            >
+              <span className="underline">개인정보 수집 및 이용 동의</span>에 동의합니다 (필수)
+            </label>
+          </div>
+
           <button
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors"
@@ -359,7 +416,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   onChange,
   error,
 }) => (
-  <div className="max-w-[657px] flex flex-col">
+  <div className="flex flex-col max-w-[1400px]">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {options.map((option) => (
         <div
@@ -454,7 +511,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ label, onChange }) => {
           >
             <path
               d="M21.44 11.05L12.25 20.24C11.1242 21.3658 9.59718 21.9983 8.005 21.9983C6.41282 21.9983 4.88584 21.3658 3.76 20.24C2.63416 19.1142 2.00166 17.5872 2.00166 15.995C2.00166 14.4028 2.63416 12.8758 3.76 11.75L12.95 2.56C13.7006 1.80943 14.7185 1.38776 15.78 1.38776C16.8415 1.38776 17.8594 1.80943 18.61 2.56C19.3606 3.31057 19.7823 4.32855 19.7823 5.39C19.7823 6.45145 19.3606 7.46943 18.61 8.22L9.41 17.41C9.03472 17.7853 8.52573 17.9961 7.995 17.9961C7.46427 17.9961 6.95528 17.7853 6.58 17.41C6.20472 17.0347 5.99389 16.5257 5.99389 15.995C5.99389 15.4643 6.20472 14.9553 6.58 14.58L15.07 6.1"
-              stroke="#00FF02"
+              stroke="#ffffff"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
