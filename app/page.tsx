@@ -126,7 +126,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="fixed top-0 left-0 w-full shadow-md z-50 bg-black">
+      <header className="fixed top-0 left-0 w-full shadow-md z-50 bg-black pt-2">
         <nav className="flex justify-between items-center p-4 h-16">
           <div className="flex items-center">
             <a

@@ -27,7 +27,7 @@ const ImageRow: React.FC<{
 );
 
 const InfoSection: React.FC = () => (
-  <div className="w-full max-w-screen-xl flex flex-col lg:flex-row items-center mt-20 space-y-12 lg:space-y-0 lg:justify-between lg:px-16 px-4">
+  <div className="w-full max-w-screen-xl flex flex-col lg:flex-row mt-20 space-y-12 lg:space-y-0 lg:justify-between items-center lg:items-start lg:px-16 px-4">
     <div>
       <div className="flex items-center">
         <div className="text-white font-pretendard text-[17.95px] font-normal leading-[150%]">
