@@ -195,110 +195,112 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
   };
 
   return (
-    <section id="contact" className="bg-black px-16">
-      <div className="text-white font-pretendard text-[46.125px] font-black leading-[61.5px] tracking-[0.231px]">
-        간편 문의하기
-      </div>
-      <div className="text-white font-pretendard text-[46.125px] font-black leading-[61.5px] tracking-[0.231px]">
-        부담없이 언제든 문의해주세요!
-      </div>
+    <section id="contact" className="bg-black flex flex-col items-center">
+      <div>
+        <div className="text-white font-pretendard text-[46.125px] font-black leading-[61.5px] tracking-[0.231px]">
+          간편 문의하기
+        </div>
+        <div className="text-white font-pretendard text-[46.125px] font-black leading-[61.5px] tracking-[0.231px]">
+          부담없이 언제든 문의해주세요!
+        </div>
 
-      <div className="text-white font-pretendard text-[20px] font-normal leading-[160%] mt-[37px]">
-        사용자와 클라이언트의 니즈가 만나 New Business의 가치를 만들어 낼 때까지
-        치열하게 고민하는 티슈만의 서비스 디자인 방법론으로 서포트하겠습니다.
-      </div>
+        <div className="text-white font-pretendard text-[20px] font-normal leading-[160%] mt-[37px]">
+          사용자와 클라이언트의 니즈가 만나 New Business의 가치를 만들어 낼
+          때까지 치열하게 고민하는 티슈만의 서비스 디자인 방법론으로
+          서포트하겠습니다.
+        </div>
 
-      <div className="w-full p-8 rounded-lg mt-[113px]">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
-            Step 01.
-          </div>
-          <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
-            기본 정보를 남겨주세요.
-          </div>
+        <div className="w-full p-8 rounded-lg mt-[113px]">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+              Step 01.
+            </div>
+            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+              기본 정보를 남겨주세요.
+            </div>
 
-          <div className="text-white font-pretendard text-[16px] font-medium leading-[110%] mt-[7px]">
-            언론 홍보, 인터뷰 요청, 세미나 요청, 마케팅업무, 개발사 협조 등을
-            의뢰할 수 있습니다.
-          </div>
+            <div className="text-white font-pretendard text-[16px] font-medium leading-[110%] mt-[7px]">
+              언론 홍보, 인터뷰 요청, 세미나 요청, 마케팅업무, 개발사 협조 등을
+              의뢰할 수 있습니다.
+            </div>
 
-          <div className="h-[35px]"></div>
+            <div className="h-[35px]"></div>
 
-          <InputField
-            label={labels.name}
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            error={errors.name}
-          />
-          <InputField
-            label={labels.company}
-            type="text"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            required
-            error={errors.company}
-          />
-          <InputField
-            label={labels.email}
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            error={errors.email}
-          />
-          <InputField
-            label={labels.phone}
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            error={errors.phone}
-          />
+            <InputField
+              label={labels.name}
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              error={errors.name}
+            />
+            <InputField
+              label={labels.company}
+              type="text"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              required
+              error={errors.company}
+            />
+            <InputField
+              label={labels.email}
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              error={errors.email}
+            />
+            <InputField
+              label={labels.phone}
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              error={errors.phone}
+            />
 
-          <div className="h-[100px]"></div>
+            <div className="h-[100px]"></div>
 
-          <p className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
-            의뢰하고 싶으신 분야를 선택해주세요.{" "}
-            <span className="ml-1 text-[20px]">(중복 선택 가능)</span>
-          </p>
+            <p className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+              의뢰하고 싶으신 분야를 선택해주세요.{" "}
+              <span className="ml-1 text-[20px]">(중복 선택 가능)</span>
+            </p>
 
-          <div className="h-[35px]"></div>
+            <div className="h-[35px]"></div>
 
-          <CheckboxGroup
-            label={labels.fields}
-            options={fieldsOptions}
-            selectedOptions={formData.fields}
-            onChange={handleFieldChange}
-            error={errors.fields}
-          />
+            <CheckboxGroup
+              label={labels.fields}
+              options={fieldsOptions}
+              selectedOptions={formData.fields}
+              onChange={handleFieldChange}
+              error={errors.fields}
+            />
 
-          <div className="h-[100px]"></div>
+            <div className="h-[100px]"></div>
 
-          <div className="text-white font-pretendard text-[28px] font-bold leading-[160%] mt-[113px]">
-            Step 03.
-          </div>
-          <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
-            프로젝트에 대해 저희가 더 알아야하는 내용이 있다면 편하게
-            알려주세요.
-          </div>
-          <TextareaField
-            label={labels.additionalInfo}
-            name="additionalInfo"
-            value={formData.additionalInfo}
-            onChange={handleChange}
-          />
-          <FileUpload label={labels.file} onChange={handleFileChange} />
+            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%] mt-[113px]">
+              Step 03.
+            </div>
+            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+              프로젝트에 대해 저희가 더 알아야하는 내용이 있다면 편하게
+              알려주세요.
+            </div>
+            <TextareaField
+              label={labels.additionalInfo}
+              name="additionalInfo"
+              value={formData.additionalInfo}
+              onChange={handleChange}
+            />
+            <FileUpload label={labels.file} onChange={handleFileChange} />
 
-          <div className="h-[100px]"></div>
+            <div className="h-[100px]"></div>
 
-          <p className="max-w-[500px] text-white font-pretendard text-xs font-medium whitespace-pre-line border-b-[1px] border-white pb-[60px]">
-            {`개인정보 수집 및 이용 동의
+            <p className="max-w-[500px] text-white font-pretendard text-xs font-medium whitespace-pre-line border-b-[1px] border-white pb-[60px]">
+              {`개인정보 수집 및 이용 동의
 
 유한회사 티슈는  『개인정보보호법』 제 15조 및 22조 등 관련 법령을 준수하며, 이용자 권익 보호에 최선을 다하고 있습니다. 
 
@@ -317,58 +319,59 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 4. 개인정보 수집·이용 동의 거부에 대한 안내
 위 개인정보 중 필수적 정보의 수집·이용에 관한 동의는 의뢰를 위하여 필수적이므로, 위 사항에 동의하셔야만 의뢰가 가능합니다.
             `}
-          </p>
+            </p>
 
-          <div className="h-[20px]"></div>
+            <div className="h-[20px]"></div>
 
-          <div className="flex items-center mb-8">
-            <div
-              className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer mr-2"
-              onClick={() => setAgreed(!agreed)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 100 100"
-                fill="#ffffff"
+            <div className="flex items-center mb-8">
+              <div
+                className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer mr-2"
+                onClick={() => setAgreed(!agreed)}
               >
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke={agreed ? "#00FF02" : "#ffffff"}
-                  strokeWidth="5"
-                />
-                <path
-                  d="M30 50 L45 65 L70 40"
-                  fill="none"
-                  stroke={agreed ? "#00FF02" : "#ffffff"}
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  fill="#ffffff"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke={agreed ? "#00FF02" : "#ffffff"}
+                    strokeWidth="5"
+                  />
+                  <path
+                    d="M30 50 L45 65 L70 40"
+                    fill="none"
+                    stroke={agreed ? "#00FF02" : "#ffffff"}
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <label
+                className="text-white text-[20px] font-pretendard font-medium leading-[110%] cursor-pointer"
+                onClick={() => setAgreed(!agreed)}
+              >
+                <span className="underline">개인정보 수집 및 이용 동의</span>에
+                동의합니다 (필수)
+              </label>
             </div>
-            <label
-              className="text-white text-[20px] font-pretendard font-medium leading-[110%] cursor-pointer"
-              onClick={() => setAgreed(!agreed)}
-            >
-              <span className="underline">개인정보 수집 및 이용 동의</span>에
-              동의합니다 (필수)
-            </label>
-          </div>
 
-          <div className="h-[90px]"></div>
+            <div className="h-[90px]"></div>
 
-          <div className="flex justify-center items-center">
-            <button
-              type="submit"
-              className="flex w-[236px] px-[35px] py-4 justify-center items-center gap-[10px] rounded-[32px] border border-[#0F0] bg-[#0D0D0D] text-white font-pretendard text-[28px] font-medium leading-[110%]"
-            >
-              {labels.submit}
-            </button>
-          </div>
-        </form>
+            <div className="flex justify-center items-center">
+              <button
+                type="submit"
+                className="flex w-[236px] px-[35px] py-4 justify-center items-center gap-[10px] rounded-[32px] border border-[#0F0] bg-[#0D0D0D] text-white font-pretendard text-[28px] font-medium leading-[110%]"
+              >
+                {labels.submit}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );

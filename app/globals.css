@@ -9,3 +9,32 @@
     @apply font-sans;
   }
 }
+
+/* 왼쪽에서 오른쪽으로 움직이는 애니메이션 */
+@keyframes moveLeftToRight {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(50px);
+  }
+}
+
+/* 오른쪽에서 왼쪽으로 움직이는 애니메이션 */
+@keyframes moveRightToLeft {
+  from {
+    transform: translateX(50px);
+  }
+  to {
+    transform: translateX(-50px);
+  }
+}
+
+/* 애니메이션 클래스 */
+.animate-left-right {
+  animation: moveLeftToRight 6s infinite alternate ease-in-out;
+}
+
+.animate-right-left {
+  animation: moveRightToLeft 6s infinite alternate ease-in-out;
+}

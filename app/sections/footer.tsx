@@ -3,16 +3,17 @@ import Image from "next/image";
 
 const Footer: React.FC<{ language: "KO" | "EN" }> = ({ language }) => {
   return (
-    <footer className="bg-black py-8 flex flex-col justify-center items-center py-36">
+    <footer className="bg-black flex flex-col justify-center items-center py-36">
       <div className="container px-4">
-        <div className="flex justify-center space-x-4 mb-4">
+        <div className="flex justify-center space-x-4 mb-4 animate-left-right">
           <Image src="/logo.svg" alt="Image 1" width={500} height={500} />
           <Image src="/logo.svg" alt="Image 2" width={500} height={500} />
           <Image src="/logo.svg" alt="Image 3" width={500} height={500} />
           <Image src="/logo.svg" alt="Image 4" width={500} height={500} />
           <Image src="/logo.svg" alt="Image 5" width={500} height={500} />
         </div>
-        <div className="flex justify-center space-x-4">
+
+        <div className="flex justify-center space-x-4 animate-right-left">
           <Image src="/logo.svg" alt="Image 6" width={500} height={500} />
           <Image src="/logo.svg" alt="Image 7" width={500} height={500} />
           <Image src="/logo.svg" alt="Image 8" width={500} height={500} />
