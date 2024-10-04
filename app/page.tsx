@@ -11,6 +11,7 @@ import Service from "@/sections/service";
 import Work from "@/sections/work";
 import Contact from "@/sections/contact";
 import Boss from "@/sections/boss";
+import Footer from "@/sections/footer";
 
 import Logo from "@/components/logo";
 
@@ -177,6 +178,7 @@ const Home: NextPage = () => {
         <Work language={language} />
         <Boss language={language} />
         <Contact language={language} />
+        <Footer language={language} />
       </main>
     </div>
   );

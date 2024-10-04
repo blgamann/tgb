@@ -33,7 +33,7 @@ const translations = {
       fields: "분야 선택",
       additionalInfo: "추가 전달 사항",
       file: "파일 첨부",
-      submit: "제출",
+      submit: "문의 보내기",
     },
     fieldsOptions: [
       "IT 프로젝트 컨설팅(PMO)",
@@ -168,6 +168,15 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       return;
     }
 
+    if (!agreed) {
+      alert(
+        language === "KO"
+          ? "개인정보 수집 및 이용 동의를 체크해주세요."
+          : "Please check the personal information collection and use agreement."
+      );
+      return;
+    }
+
     console.log(formData.file);
     alert(JSON.stringify(formData, null, 2));
     // 여기에 폼 제출 로직을 추가하세요
@@ -186,7 +195,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
   };
 
   return (
-    <section id="contact" className="bg-black">
+    <section id="contact" className="bg-black px-16">
       <div className="text-white font-pretendard text-[46.125px] font-black leading-[61.5px] tracking-[0.231px]">
         간편 문의하기
       </div>
@@ -344,16 +353,21 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
               className="text-white text-[20px] font-pretendard font-medium leading-[110%] cursor-pointer"
               onClick={() => setAgreed(!agreed)}
             >
-              <span className="underline">개인정보 수집 및 이용 동의</span>에 동의합니다 (필수)
+              <span className="underline">개인정보 수집 및 이용 동의</span>에
+              동의합니다 (필수)
             </label>
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors"
-          >
-            {labels.submit}
-          </button>
+          <div className="h-[90px]"></div>
+
+          <div className="flex justify-center items-center">
+            <button
+              type="submit"
+              className="flex w-[236px] px-[35px] py-4 justify-center items-center gap-[10px] rounded-[32px] border border-[#0F0] bg-[#0D0D0D] text-white font-pretendard text-[28px] font-medium leading-[110%]"
+            >
+              {labels.submit}
+            </button>
+          </div>
         </form>
       </div>
     </section>
