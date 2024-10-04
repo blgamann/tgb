@@ -97,7 +97,7 @@ const InfoItem: React.FC<{
   </div>
 );
 
-const Footer: React.FC<FooterProps> = ({ language }) => {
+const Footer: React.FC<FooterProps> = ({}) => {
   return (
     <footer className="bg-black flex flex-col justify-center items-center py-36 overflow-x-hidden w-full">
       <div className="w-full max-w-screen-xl px-4 mx-auto">
