@@ -15,6 +15,20 @@ const config: Config = {
       fontFamily: {
         sans: ["Pretendard", "sans-serif"],
       },
+      keyframes: {
+        "left-right": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(-10px)" },
+        },
+        "right-left": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(10px)" },
+        },
+      },
+      animation: {
+        "left-right": "left-right 2s ease-in-out infinite",
+        "right-left": "right-left 2s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
