@@ -195,36 +195,39 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
   };
 
   return (
-    <section id="contact" className="bg-black flex flex-col items-center">
-      <div>
-        <div className="text-white font-pretendard text-[46.125px] font-black leading-[61.5px] tracking-[0.231px]">
+    <section
+      id="contact"
+      className="bg-black flex flex-col items-center px-4 py-8 md:px-8 md:py-16"
+    >
+      <div className="w-full max-w-4xl">
+        <div className="text-white font-pretendard text-2xl md:text-4xl font-black leading-snug tracking-wide">
           간편 문의하기
         </div>
-        <div className="text-white font-pretendard text-[46.125px] font-black leading-[61.5px] tracking-[0.231px]">
+        <div className="text-white font-pretendard text-2xl md:text-4xl font-black leading-snug tracking-wide">
           부담없이 언제든 문의해주세요!
         </div>
 
-        <div className="text-white font-pretendard text-[20px] font-normal leading-[160%] mt-[37px]">
+        <div className="text-white font-pretendard text-base md:text-lg font-normal leading-relaxed mt-4 md:mt-9">
           사용자와 클라이언트의 니즈가 만나 New Business의 가치를 만들어 낼
           때까지 치열하게 고민하는 티슈만의 서비스 디자인 방법론으로
           서포트하겠습니다.
         </div>
 
-        <div className="w-full p-8 rounded-lg mt-[113px]">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+        <div className="w-full p-4 md:p-8 rounded-lg mt-8 md:mt-28">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="text-white font-pretendard text-xl md:text-2xl font-bold leading-snug">
               Step 01.
             </div>
-            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+            <div className="text-white font-pretendard text-xl md:text-2xl font-bold leading-snug">
               기본 정보를 남겨주세요.
             </div>
 
-            <div className="text-white font-pretendard text-[16px] font-medium leading-[110%] mt-[7px]">
+            <div className="text-white font-pretendard text-sm md:text-base font-medium leading-snug mt-2 md:mt-4">
               언론 홍보, 인터뷰 요청, 세미나 요청, 마케팅업무, 개발사 협조 등을
               의뢰할 수 있습니다.
             </div>
 
-            <div className="h-[35px]"></div>
+            <div className="h-4 md:h-9"></div>
 
             <InputField
               label={labels.name}
@@ -263,14 +266,19 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
               error={errors.phone}
             />
 
-            <div className="h-[100px]"></div>
+            <div className="h-6 md:h-12"></div>
 
-            <p className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+            <div className="text-white font-pretendard text-xl md:text-2xl font-bold leading-snug">
+              Step 02.
+            </div>
+            <p className="text-white font-pretendard text-xl md:text-2xl font-bold leading-snug">
               의뢰하고 싶으신 분야를 선택해주세요.{" "}
-              <span className="ml-1 text-[20px]">(중복 선택 가능)</span>
+              <span className="ml-1 text-sm md:text-base">
+                (중복 선택 가능)
+              </span>
             </p>
 
-            <div className="h-[35px]"></div>
+            <div className="h-4 md:h-9"></div>
 
             <CheckboxGroup
               label={labels.fields}
@@ -280,12 +288,12 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
               error={errors.fields}
             />
 
-            <div className="h-[100px]"></div>
+            <div className="h-6 md:h-12"></div>
 
-            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%] mt-[113px]">
+            <div className="text-white font-pretendard text-xl md:text-2xl font-bold leading-snug mt-8 md:mt-28">
               Step 03.
             </div>
-            <div className="text-white font-pretendard text-[28px] font-bold leading-[160%]">
+            <div className="text-white font-pretendard text-xl md:text-2xl font-bold leading-snug">
               프로젝트에 대해 저희가 더 알아야하는 내용이 있다면 편하게
               알려주세요.
             </div>
@@ -297,9 +305,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             />
             <FileUpload label={labels.file} onChange={handleFileChange} />
 
-            <div className="h-[100px]"></div>
+            <div className="h-6 md:h-12"></div>
 
-            <p className="max-w-[500px] text-white font-pretendard text-xs font-medium whitespace-pre-line border-b-[1px] border-white pb-[60px]">
+            <p className="max-w-full md:max-w-2xl text-white font-pretendard text-sm md:text-base font-medium whitespace-pre-line border-b border-white pb-4 md:pb-15">
               {`개인정보 수집 및 이용 동의
 
 유한회사 티슈는  『개인정보보호법』 제 15조 및 22조 등 관련 법령을 준수하며, 이용자 권익 보호에 최선을 다하고 있습니다. 
@@ -318,20 +326,21 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
 4. 개인정보 수집·이용 동의 거부에 대한 안내
 위 개인정보 중 필수적 정보의 수집·이용에 관한 동의는 의뢰를 위하여 필수적이므로, 위 사항에 동의하셔야만 의뢰가 가능합니다.
-            `}
+              `}
             </p>
 
-            <div className="h-[20px]"></div>
+            <div className="h-2 md:h-5"></div>
 
-            <div className="flex items-center mb-8">
+            <div className="flex items-center mb-4 md:mb-8">
               <div
-                className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer mr-2"
+                className="w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center cursor-pointer mr-2"
                 onClick={() => setAgreed(!agreed)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 100 100"
                   fill="#ffffff"
+                  className="w-6 h-6 md:w-8 md:h-8"
                 >
                   <circle
                     cx="50"
@@ -352,7 +361,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 </svg>
               </div>
               <label
-                className="text-white text-[20px] font-pretendard font-medium leading-[110%] cursor-pointer"
+                className="text-white text-sm md:text-base font-pretendard font-medium leading-snug cursor-pointer"
                 onClick={() => setAgreed(!agreed)}
               >
                 <span className="underline">개인정보 수집 및 이용 동의</span>에
@@ -360,12 +369,12 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
               </label>
             </div>
 
-            <div className="h-[90px]"></div>
+            <div className="h-8 md:h-20"></div>
 
             <div className="flex justify-center items-center">
               <button
                 type="submit"
-                className="flex w-[236px] px-[35px] py-4 justify-center items-center gap-[10px] rounded-[32px] border border-[#0F0] bg-[#0D0D0D] text-white font-pretendard text-[28px] font-medium leading-[110%]"
+                className="flex w-full max-w-xs md:max-w-sm px-6 py-3 justify-center items-center gap-2 rounded-full border border-[#0F0] bg-[#0D0D0D] text-white font-pretendard text-lg md:text-xl font-medium leading-snug"
               >
                 {labels.submit}
               </button>
@@ -396,9 +405,9 @@ const InputField: React.FC<InputFieldProps> = ({
   required = false,
   error,
 }) => (
-  <div className="flex items-center">
+  <div className="flex flex-col md:flex-row items-start md:items-center">
     <label
-      className="w-[134px] text-xl font-bold leading-[110%]"
+      className="w-full md:w-32 text-sm md:text-lg font-bold leading-snug mb-1 md:mb-0"
       htmlFor={name}
     >
       {label}:{required && <span className="text-red-500"> *</span>}
@@ -410,11 +419,15 @@ const InputField: React.FC<InputFieldProps> = ({
       value={value}
       onChange={onChange}
       required={required}
-      className={`p-2 border-b-2 border-white bg-transparent outline-none focus:outline-none text-[#CECECE] text-[20px] font-bold leading-[110%] ${
+      className={`w-full mt-1 md:mt-0 md:ml-4 p-2 border-b-2 border-white bg-transparent outline-none focus:outline-none text-gray-300 text-sm md:text-base font-bold leading-snug ${
         error ? "border-red-500" : "border-white"
       }`}
     />
-    {error && <span className="text-red-500 text-sm mt-1">{error}</span>}
+    {error && (
+      <span className="text-red-500 text-xs md:text-sm mt-1 md:mt-0 md:ml-4">
+        {error}
+      </span>
+    )}
   </div>
 );
 
@@ -433,12 +446,12 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   onChange,
   error,
 }) => (
-  <div className="flex flex-col max-w-[1400px]">
+  <div className="flex flex-col max-w-full">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {options.map((option) => (
         <div
           key={option}
-          className={`flex w-[301px] h-[75px] px-[35px] py-4 justify-center items-center gap-[10px] rounded-[90px] border ${
+          className={`flex w-full h-12 px-4 py-2 justify-center items-center gap-2 rounded-full border ${
             selectedOptions.includes(option)
               ? "border-green-500"
               : "border-white"
@@ -453,7 +466,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
           }
         >
           <div
-            className={`w-full text-[22px] font-normal leading-[110%] text-center ${
+            className={`w-full text-sm md:text-[15px] font-medium text-center ${
               selectedOptions.includes(option) ? "text-green-500" : "text-white"
             }`}
           >
@@ -462,7 +475,9 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
         </div>
       ))}
     </div>
-    {error && <span className="text-red-500 text-sm mt-1">{error}</span>}
+    {error && (
+      <span className="text-red-500 text-xs md:text-sm mt-2">{error}</span>
+    )}
   </div>
 );
 
@@ -480,7 +495,9 @@ const TextareaField: React.FC<TextareaFieldProps> = ({
   onChange,
 }) => (
   <div className="flex flex-col">
-    <label className="font-medium" htmlFor={name}></label>
+    <label className="font-medium text-sm md:text-base mb-1" htmlFor={name}>
+      {label}
+    </label>
     <textarea
       id={name}
       name={name}
@@ -488,7 +505,7 @@ const TextareaField: React.FC<TextareaFieldProps> = ({
       onChange={onChange}
       placeholder={`추가 전달 내용이 있으시면 말씀해 주세요. (선택 사항)
 회사 홈페이지 및 참고 홈페이지 URL`}
-      className="p-4 border border-white rounded-[20px] bg-[#0D0D0D] max-w-[657px] min-h-[198px] flex-shrink-0 text-[#CECECE] text-base font-medium leading-[160%]"
+      className="p-4 border border-white rounded-3xl bg-[#0D0D0D] w-full max-w-full md:max-w-2xl min-h-48 md:min-h-60 text-gray-300 text-sm md:text-base font-medium leading-relaxed resize-none"
     />
   </div>
 );
@@ -510,21 +527,21 @@ const FileUpload: React.FC<FileUploadProps> = ({ label, onChange }) => {
   };
 
   return (
-    <div className="max-w-[657px] ">
+    <div className="max-w-full md:max-w-2xl">
       {fileName && (
-        <div className="ml-2 mb-2 text-white text-sm self-end text-right">
+        <div className="ml-2 mb-2 text-white text-xs md:text-sm self-end text-right">
           {fileName}
         </div>
       )}
-      <div className="flex justify-between items-center">
-        <div className="flex">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div className="flex items-center mb-4 md:mb-0">
           <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
+            className="mr-2 w-6 h-6 md:w-6 md:h-6"
           >
             <path
               d="M21.44 11.05L12.25 20.24C11.1242 21.3658 9.59718 21.9983 8.005 21.9983C6.41282 21.9983 4.88584 21.3658 3.76 20.24C2.63416 19.1142 2.00166 17.5872 2.00166 15.995C2.00166 14.4028 2.63416 12.8758 3.76 11.75L12.95 2.56C13.7006 1.80943 14.7185 1.38776 15.78 1.38776C16.8415 1.38776 17.8594 1.80943 18.61 2.56C19.3606 3.31057 19.7823 4.32855 19.7823 5.39C19.7823 6.45145 19.3606 7.46943 18.61 8.22L9.41 17.41C9.03472 17.7853 8.52573 17.9961 7.995 17.9961C7.46427 17.9961 6.95528 17.7853 6.58 17.41C6.20472 17.0347 5.99389 16.5257 5.99389 15.995C5.99389 15.4643 6.20472 14.9553 6.58 14.58L15.07 6.1"
@@ -534,14 +551,14 @@ const FileUpload: React.FC<FileUploadProps> = ({ label, onChange }) => {
               strokeLinejoin="round"
             />
           </svg>
-          <div className="ml-1">
+          <div className="text-sm md:text-base">
             <div>제안요청서 또는 기타파일이 있다면 전달 부탁드립니다.</div>
             <div>PDF, ZIP, JPG, PPT, XLS, DOC, HWP, PNG / 최대 10MB</div>
           </div>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-start md:items-end">
           <div
-            className="flex w-[150px] h-[38px] px-[22.737px] py-[10.394px] justify-center items-center gap-[6.496px] flex-shrink-0 rounded-[20.788px] border border-[#0F0] bg-[#0D0D0D] text-white text-base font-medium leading-[110%] cursor-pointer"
+            className="flex w-36 md:w-40 h-10 px-6 py-2 justify-center items-center gap-1 flex-shrink-0 rounded-xl border border-green-500 bg-[#0D0D0D] text-white text-sm md:text-base font-medium leading-snug cursor-pointer"
             onClick={() => document.getElementById("file-upload")?.click()}
           >
             {label}
