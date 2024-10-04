@@ -1,6 +1,6 @@
 import React from "react";
 
-const About: React.FC<{ language: "KO" | "EN" }> = ({ language }) => {
+const About: React.FC<{ language: "KO" | "EN" }> = ({}) => {
   return (
     <section
       id="about"

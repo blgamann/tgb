@@ -391,7 +391,7 @@ interface InputFieldProps {
   type: string;
   name: string;
   value: string;
-  onChange: ChangeEvent<HTMLInputElement>["onChange"];
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
   error?: string;
 }
@@ -435,12 +435,12 @@ interface CheckboxGroupProps {
   label: string;
   options: string[];
   selectedOptions: string[];
-  onChange: ChangeEvent<HTMLInputElement>["onChange"];
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
 }
 
 const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
-  label,
+  // label,
   options,
   selectedOptions,
   onChange,
@@ -485,7 +485,7 @@ interface TextareaFieldProps {
   label: string;
   name: string;
   value: string;
-  onChange: ChangeEvent<HTMLTextAreaElement>["onChange"];
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const TextareaField: React.FC<TextareaFieldProps> = ({
@@ -512,7 +512,7 @@ const TextareaField: React.FC<TextareaFieldProps> = ({
 
 interface FileUploadProps {
   label: string;
-  onChange: ChangeEvent<HTMLInputElement>["onChange"];
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FileUpload: React.FC<FileUploadProps> = ({ label, onChange }) => {

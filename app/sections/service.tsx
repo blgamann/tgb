@@ -1,10 +1,6 @@
 import React from "react";
 
-const Service: React.FC<{ language: "KO" | "EN" }> = ({ language }) => {
-  const getTitle = () => {
-    return language === "KO" ? "서비스" : "Service";
-  };
-
+const Service: React.FC<{ language: "KO" | "EN" }> = ({}) => {
   const Item = ({
     service,
     serviceDescription,
