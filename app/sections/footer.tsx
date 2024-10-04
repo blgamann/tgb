@@ -6,23 +6,20 @@ type FooterProps = {
 };
 
 const ImageRow: React.FC<{
+  src: string;
   count: number;
-  maxWidth: string;
   startIndex: number;
-}> = ({ count, maxWidth, startIndex }) => (
-  <div
-    className={`flex justify-center items-center space-x-4 mb-8 ${
-      maxWidth === "[200px]" ? "animate-left-right" : "animate-right-left"
-    }`}
-  >
+  animate: "animate-left-right" | "animate-right-left";
+}> = ({ src, count, startIndex, animate }) => (
+  <div className={`flex justify-center items-center space-x-4 mb-8 ${animate}`}>
     {Array.from({ length: count }).map((_, index) => (
       <div key={startIndex + index} className="flex-shrink-0">
         <Image
-          src="/logo.svg"
-          alt={`Image ${startIndex + index + 1}`}
-          width={400}
-          height={400}
-          className={`w-full max-w-${maxWidth} h-auto`}
+          src={`${src}${index + 1}.png`}
+          alt={`Image ${index + 1}`}
+          width={200}
+          height={200}
+          className="w-[105px] h-[45px] md:w-[210px] md:h-[90px]"
         />
       </div>
     ))}
@@ -104,11 +101,20 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
   return (
     <footer className="bg-black flex flex-col justify-center items-center py-36 overflow-x-hidden w-full">
       <div className="w-full max-w-screen-xl px-4 mx-auto">
-        {/* 첫 번째 이미지 행: 5개 */}
-        <ImageRow count={5} maxWidth="[200px]" startIndex={0} />
+        <ImageRow
+          src="/footer-1-"
+          count={5}
+          startIndex={0}
+          animate="animate-left-right"
+        />
 
         {/* 두 번째 이미지 행: 4개 */}
-        <ImageRow count={4} maxWidth="[250px]" startIndex={5} />
+        <ImageRow
+          src="/footer-2-"
+          count={5}
+          startIndex={5}
+          animate="animate-right-left"
+        />
       </div>
 
       {/* 하단 정보 섹션 */}
