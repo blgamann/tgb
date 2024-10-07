@@ -72,6 +72,7 @@ const ContactInfo: React.FC = () => (
         title="SNS"
         details={[
           <a
+            key="instagram"
             href="https://www.instagram.com/tishoo_com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -87,7 +88,7 @@ const ContactInfo: React.FC = () => (
 
 const InfoItem: React.FC<{
   title: string;
-  details: string[];
+  details: (string | JSX.Element)[];
   className?: string;
 }> = ({ title, details, className }) => (
   <div className={`h-[120px] ${className || ""}`}>
