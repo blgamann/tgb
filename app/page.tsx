@@ -98,14 +98,14 @@ const Home: NextPage = () => {
     if (!isMenuOpen) return null;
 
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-95 z-50 md:hidden mt-16">
+      <div className="fixed inset-0 bg-black bg-opacity-95 z-50 md:hidden mt-16 flex items-center justify-center">
         <nav className="flex flex-col items-center mt-8 space-y-6">
           {menuItems.map(({ href, text }) => (
             <a
               key={href}
               href={href}
               onClick={(e) => handleClick(e, href)}
-              className="text-2xl text-white hover:text-gray-400 transition-colors"
+              className="text-white hover:text-gray-400 transition-colors text-[71.305px] font-black leading-[95.073px] tracking-[0.357px]"
             >
               {text}
             </a>
