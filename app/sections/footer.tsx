@@ -68,7 +68,19 @@ const ContactInfo: React.FC = () => (
     </div>
     <div className="ml-6 pl-4 border-l border-white">
       <InfoItem title="E-mail" details={["contact@tishoo.com"]} />
-      <InfoItem title="SNS" details={["instagram"]} className="mt-4" />
+      <InfoItem
+        title="SNS"
+        details={[
+          <a
+            href="https://www.instagram.com/tishoo_com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            instagram
+          </a>,
+        ]}
+        className="mt-4"
+      />
     </div>
   </>
 );

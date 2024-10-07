@@ -25,9 +25,13 @@ const About: React.FC<{ language: "KO" | "EN" }> = ({}) => {
               focusing on creating products that resonate meaningfully with
               users.
             </p>
-            <button className="w-[280px] mt-12 sm:mt-16 flex items-center justify-center text-lg sm:text-xl px-6 sm:px-8 py-2.5 font-semibold rounded-full bg-[#ffffff33] hover:bg-[#ffffff55] transition-colors duration-300">
+            <a
+              href="/[TXG]회사소개서_2024_KOR.pdf"
+              download
+              className="w-[280px] mt-12 sm:mt-16 flex items-center justify-center text-lg sm:text-xl px-6 sm:px-8 py-2.5 font-semibold rounded-full bg-[#ffffff33] hover:bg-[#ffffff55] transition-colors duration-300"
+            >
               Download TXG Profile
-            </button>
+            </a>
           </div>
         </div>
       </div>
