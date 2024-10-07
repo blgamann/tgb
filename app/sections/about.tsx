@@ -9,7 +9,7 @@ const About: React.FC<{ language: "KO" | "EN" }> = ({}) => {
       <div className="flex flex-col justify-center w-full">
         <div
           className="mx-auto sm:mx-0 bg-black bg-opacity-50 p-4 sm:p-6 md:p-8 rounded-lg bg-[url('/about-background.png')] bg-contain bg-center bg-no-repeat w-full"
-          style={{ paddingTop: "56.25%", position: "relative" }}
+          style={{ paddingTop: "56%", position: "relative" }}
         >
           <div className="absolute inset-0 flex flex-col justify-center">
             <p className="font-normal text-white text-4xl sm:text-5xl md:text-6xl mb-6">
