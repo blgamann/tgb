@@ -13,6 +13,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script
+        id="chatway"
+        async={true}
+        src={`https://cdn.chatway.app/widget.js?id=${process.env.NEXT_PUBLIC_CHATWAY_ID}`}
+      ></script>
       <body>{children}</body>
     </html>
   );
