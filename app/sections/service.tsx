@@ -4,7 +4,6 @@ const Service: React.FC<{ language: "KO" | "EN" }> = ({}) => {
   const Item = ({
     service,
     serviceDescription,
-    buttonText,
     items,
   }: {
     service: string;
@@ -13,8 +12,8 @@ const Service: React.FC<{ language: "KO" | "EN" }> = ({}) => {
     items: string[];
   }) => {
     return (
-      <div className="w-full lg:w-[300px] overflow-y-auto py-6 lg:py-0">
-        <div className="border-l-2 border-[#00ff02] pl-4 pb-6 h-auto lg:h-[250px]">
+      <div className="w-full lg:w-[376px] overflow-y-auto py-6 lg:py-0">
+        <div className="border-l-2 border-[#00ff02] pl-4 pb-6 h-auto lg:h-[210px]">
           <h2 className="text-[#00ff02] font-bold text-[38px] mb-3">
             {service}
           </h2>
@@ -23,15 +22,17 @@ const Service: React.FC<{ language: "KO" | "EN" }> = ({}) => {
           </p>
         </div>
 
-        <button className="my-8 rounded-[40px] border border-[#0F0] bg-black inline-flex p-[6px_24px] justify-center items-center gap-[8px] text-[18px]">
+        {/* <button className="my-8 rounded-[40px] border border-[#0F0] bg-black inline-flex p-[6px_24px] justify-center items-center gap-[8px] text-[18px]">
           <span>{buttonText}</span>
-        </button>
+        </button> */}
 
-        <div className="border-l-2 border-[#00ff02] pl-4 pb-1">
-          {items?.map((item) => (
+        <div className="flex flex-col justify-center border-l-2 border-[#00ff02] pl-4 mt-12 lg:h-[200px]">
+          {items?.map((item, index) => (
             <p
               key={item}
-              className="font-normal text-white text-base leading-[24px] mb-3"
+              className={`font-normal text-white text-base leading-[24px] ${
+                index !== items.length - 1 ? "mb-5" : ""
+              }`}
             >
               {item}
             </p>
@@ -47,7 +48,7 @@ const Service: React.FC<{ language: "KO" | "EN" }> = ({}) => {
         <div className="text-[48px] font-normal text-[#00ff02]">
           Our Service
         </div>
-        <div className="flex flex-col lg:flex-row justify-center items-start w-full max-w-6xl mx-auto px-4">
+        <div className="flex flex-col lg:flex-row justify-center items-start w-full mx-auto px-4 max-w-[1400px]">
           {[
             {
               service: "Consulting",

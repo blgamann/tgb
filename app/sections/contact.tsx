@@ -232,7 +232,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
   return (
     <section
       id="contact"
-      className="bg-black flex flex-col items-center px-4 py-8 md:px-8 md:py-16"
+      className="bg-black flex flex-col items-center px-4 py-20 md:px-8 md:py-28"
     >
       <div className="w-full max-w-4xl">
         <div className="text-white font-pretendard text-2xl md:text-4xl font-black leading-snug tracking-wide">
