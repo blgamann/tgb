@@ -60,7 +60,7 @@ const translations = {
       phone: "Phone Number",
       fields: "Select Fields",
       additionalInfo: "Additional Information",
-      file: "Attach File (Under 10MB)",
+      file: "Attach File",
       submit: "Submit",
     },
     fieldsOptions: [
@@ -107,7 +107,6 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // 에러 상태 초기화
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
@@ -161,8 +160,6 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       newErrors.fields = translationErrors.fields;
     }
 
-    // 다른 유효성 검사도 여기에 추가할 수 있습니다.
-
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
@@ -177,21 +174,59 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       return;
     }
 
+    fetch("/api/contact", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("GET Success:", data);
+        // Handle the retrieved data here if needed
+      })
+      .catch((error) => {
+        console.error("GET Error:", error);
+        // Handle any errors that occur during the GET request
+      });
+
+    // fetch("/api/contact", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(formData),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log("Success:", data);
+    //     alert(
+    //       language === "KO"
+    //         ? "문의가 성공적으로 제출되었습니다."
+    //         : "Your inquiry has been successfully submitted."
+    //     );
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //     alert(
+    //       language === "KO"
+    //         ? "문의 제출 중 오류가 발생했습니다. 다시 시도해 주세요."
+    //         : "An error occurred while submitting your inquiry. Please try again."
+    //     );
+    //   });
+
     console.log(formData.file);
-    alert(JSON.stringify(formData, null, 2));
+
     // 여기에 폼 제출 로직을 추가하세요
 
     // 폼 제출 후 초기화 (선택 사항)
-    setFormData({
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      fields: [],
-      additionalInfo: "",
-      file: null,
-    });
-    setErrors({});
+    // setFormData({
+    //   name: "",
+    //   company: "",
+    //   email: "",
+    //   phone: "",
+    //   fields: [],
+    //   additionalInfo: "",
+    //   file: null,
+    // });
+    // setErrors({});
   };
 
   return (
@@ -489,15 +524,11 @@ interface TextareaFieldProps {
 }
 
 const TextareaField: React.FC<TextareaFieldProps> = ({
-  label,
   name,
   value,
   onChange,
 }) => (
   <div className="flex flex-col">
-    <label className="font-medium text-sm md:text-base mb-1" htmlFor={name}>
-      {label}
-    </label>
     <textarea
       id={name}
       name={name}
