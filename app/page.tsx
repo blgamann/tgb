@@ -3,7 +3,6 @@
 
 import { useState, useEffect, useRef, FC } from "react";
 import type { NextPage } from "next";
-import Head from "next/head";
 import { Menu, X } from "lucide-react";
 
 import About from "@/sections/about";
